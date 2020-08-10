@@ -29,7 +29,14 @@ rules
 # and the frequent itemsets that has most items
 length = frequent_itemsets["itemsets"].apply(len)
 frequent_itemsets["length"] = length
-frequent_itemsets
+print(f"more thant 1: {(length > 1).sum()}")
+print(f"more thant 2: {(length > 2).sum()}")
+print(f"more thant 3: {(length > 3).sum()}")
+
+print(
+    frequent_itemsets[length==length.max()]
+)
+
 
 
 # %% top 10 lift association rules
